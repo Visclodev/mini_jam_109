@@ -5,6 +5,7 @@
 [sub_resource type="CircleShape2D" id=1]
 
 [node name="Bullet" type="RigidBody2D"]
+gravity_scale = 0.0
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 5.96046e-07, 9.53674e-07 )
