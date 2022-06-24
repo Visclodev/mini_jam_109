@@ -1,13 +1,16 @@
-extends KinematicBody2D
+extends Node2D
 
 onready var bulletRes = load("res://Objects/Bullet.tscn")
-onready var shootingPointA = get_node("ShootingPointA");
-onready var shootingPointB = get_node("ShootingPointB");
+onready var shootingPointA = get_node("Body").get_node("ShootingPointA");
+onready var shootingPointB = get_node("Body").get_node("ShootingPointB");
+onready var energyLabel = get_node("EnergyLabel");
+onready var body = get_node("Body");
 
 export var speed = 500;
 export var fireRate = 0.1;
 var nextFire = 0;
 export var firePower = 750;
+export var energy = 100;
 
 func _ready():
 	pass
@@ -36,11 +39,18 @@ func _fire(delta):
 		get_parent().add_child(bulletA);
 		get_parent().add_child(bulletB);
 		nextFire = fireRate;
+		energy -= 1;
 	if nextFire > 0:
 		nextFire -= delta;
 
 func _process(delta):
-	look_at(get_global_mouse_position());
+	energyLabel.text = "Energy: " + String(energy);
+	if energy <= 0:
+		energyLabel.text = "DEAD"
+	# movement
+	body.look_at(get_global_mouse_position());
 	_movement(delta);
+	
+	# shooting
 	_fire(delta);
 	pass

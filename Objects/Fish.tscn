@@ -1,19 +1,33 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Objects/Fish.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Assets/FIsh.png" type="Texture" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
-height = 44.0
+radius = 5.99993
+height = 38.0
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 11.0
+height = 39.9999
 
 [node name="Fish" type="KinematicBody2D" groups=["enemy"]]
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0, -9.53674e-07 )
-scale = Vector2( 1, 0.3125 )
+position = Vector2( -1.90735e-06, -1.66893e-06 )
+scale = Vector2( 0.128, 0.112 )
 texture = ExtResource( 2 )
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
 shape = SubResource( 1 )
+
+[node name="HitBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+rotation = 1.57079
+shape = SubResource( 2 )
+
+[connection signal="body_entered" from="HitBox" to="." method="_on_HitBox_body_entered"]
