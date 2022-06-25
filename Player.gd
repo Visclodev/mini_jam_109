@@ -10,6 +10,7 @@ export var speed = 500;
 export var fireRate = 0.1;
 var nextFire = 0;
 export var firePower = 750;
+export var maxEnergy = 100;
 export var energy = 100;
 export var gold = 0;
 
