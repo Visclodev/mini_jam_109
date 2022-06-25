@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Objects/Fish.gd" type="Script" id=1]
 [ext_resource path="res://Assets/FIsh.png" type="Texture" id=2]
+[ext_resource path="res://Assets/hit.wav" type="AudioStream" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 5.99993
@@ -29,5 +30,9 @@ shape = SubResource( 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 rotation = 1.57079
 shape = SubResource( 2 )
+
+[node name="HitSfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+volume_db = 3.0
 
 [connection signal="body_entered" from="HitBox" to="." method="_on_HitBox_body_entered"]

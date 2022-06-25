@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/GoldBreak.mp3-05069012fd4a6a8830c6ed6f4a17ac18.mp3str"
+
+[deps]
+
+source_file="res://Assets/GoldBreak.mp3"
+dest_files=[ "res://.import/GoldBreak.mp3-05069012fd4a6a8830c6ed6f4a17ac18.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

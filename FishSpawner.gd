@@ -18,6 +18,6 @@ func _process(delta):
 			fish.position = Vector2(rng.randi_range(0, 1280), -20);
 		if direction == 3:
 			fish.position = Vector2(rng.randi_range(0, 1280), 760);
-		get_parent().get_parent().get_parent().get_parent().add_child(fish)
+		get_parent().get_parent().get_parent().add_child(fish)
 		nextSpawn = spawnRate;
 	nextSpawn -= delta

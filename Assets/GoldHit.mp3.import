@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/GoldHit.mp3-7314db607f9149f2b47914e904bc4fb2.mp3str"
+
+[deps]
+
+source_file="res://Assets/GoldHit.mp3"
+dest_files=[ "res://.import/GoldHit.mp3-7314db607f9149f2b47914e904bc4fb2.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

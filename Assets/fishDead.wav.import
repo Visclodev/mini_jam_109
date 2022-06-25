@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/fishDead.wav-dd3a0d03fde7db09e7cc7f7beb8ae9bd.sample"
+
+[deps]
+
+source_file="res://Assets/fishDead.wav"
+dest_files=[ "res://.import/fishDead.wav-dd3a0d03fde7db09e7cc7f7beb8ae9bd.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,7 +1,10 @@
 extends KinematicBody2D
 
-onready var player = get_parent().get_node("Player");
+onready var player:KinematicBody2D = get_parent().get_node("Player");
+onready var hitSfx = get_node("HitSfx");
+onready var fishDeadRes = load("res://Objects/FishBreak.tscn");
 export var speed = 50;
+export var health = 10;
 
 func _process(delta):
 	look_at(player.position);
@@ -16,4 +19,10 @@ func _process(delta):
 func _on_HitBox_body_entered(body):
 	if body.is_in_group("bullet"):
 		body.queue_free();
+		hitSfx.play();
+		health -= 1;
+	if health <= 0:
+		var fishDeadFx = fishDeadRes.instance();
+		get_parent().add_child(fishDeadFx);
+		fishDeadFx.position = position;
 		queue_free();
