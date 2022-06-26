@@ -15,14 +15,17 @@ func _process(delta):
 		get_node("Sprite").flip_v = false;
 	pass
 
+func die():
+	var fishDeadFx = fishDeadRes.instance();
+	get_parent().add_child(fishDeadFx);
+	fishDeadFx.position = position;
+	queue_free();
 
 func _on_HitBox_body_entered(body):
 	if body.is_in_group("bullet"):
 		body.queue_free();
 		hitSfx.play();
-		health -= 1;
+		health -= body.damage;
 	if health <= 0:
-		var fishDeadFx = fishDeadRes.instance();
-		get_parent().add_child(fishDeadFx);
-		fishDeadFx.position = position;
-		queue_free();
+		get_parent().get_node("Player").points += 5;
+		die();

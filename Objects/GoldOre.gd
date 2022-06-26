@@ -16,7 +16,7 @@ func _ready():
 
 func _on_Area2D_body_entered(body):
 	if (body.is_in_group("bullet")):
-		health -= 1;
+		health -= body.damage;
 		body.queue_free();
 		hitSfx.pitch_scale = rng.randf_range(0.5, 1.5);
 		hitSfx.play();
