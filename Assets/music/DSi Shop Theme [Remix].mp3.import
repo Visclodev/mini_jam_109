@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/DSi Shop Theme [Remix].mp3-de6ae105a4839269c33e8c02514af6ed.mp3str"
+
+[deps]
+
+source_file="res://Assets/music/DSi Shop Theme [Remix].mp3"
+dest_files=[ "res://.import/DSi Shop Theme [Remix].mp3-de6ae105a4839269c33e8c02514af6ed.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

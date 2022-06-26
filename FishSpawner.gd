@@ -7,7 +7,6 @@ var rng = RandomNumberGenerator.new();
 
 func _process(delta):
 	if nextSpawn <= 0:
-		print("spawn");
 		var fish = fishRes.instance();
 		var spawnPoints = get_children();
 		fish.position = spawnPoints[rng.randi_range(0, spawnPoints.size() -1)].position;
